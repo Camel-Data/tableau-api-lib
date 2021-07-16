@@ -15,7 +15,7 @@ from tableau_api_lib.utils import extract_pages, flatten_dict_column
 
 def get_all_workbook_fields(conn: TableauServerConnection) -> List[Dict[str, Any]]:
     """Returns a list of JSON / dicts describing all available workbooks."""
-    all_workbooks = extract_pages(conn.query_workbooks_for_site, parameter_dict={"fields": "fields=_all_"})
+    all_workbooks = extract_pages(conn.query_workbooks_for_site)
     return all_workbooks
 
 
